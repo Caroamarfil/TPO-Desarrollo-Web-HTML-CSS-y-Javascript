@@ -1,0 +1,52 @@
+/* Contenedor */
+.sticky-top {
+    overflow: hidden;
+    background-color: rgb(87, 212, 205);
+    margin: 0 auto;
+  }
+  
+  /* Estilo de links */
+  .sticky-top a {
+    float: left;
+    color: rgb(30, 30, 30);
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;  /* Evita el subrayado */
+    font-size: 16px;
+    line-height: 35px;
+    transition: 100ms;             /* Velocidad de animacion al seleccionar--  */
+  }
+  
+  /* Animacion al pasar la flecha para el logo 
+  .header img.logo:hover {
+    transform: scale(1.10)   
+  }
+  
+  */
+
+  /* Fondo de los elementos, animaciones al pasar la flecha--  */
+  .sticky-top a:hover {
+
+    transform: scale(1.05);
+    color: black;
+    border-color: black;
+  }
+  
+
+  
+  /* Alineacion derecha para los links*/
+  .header-right {
+    float: right;
+  }
+  
+  /* Alineacion para responsivness */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
