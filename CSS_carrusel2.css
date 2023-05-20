@@ -1,11 +1,12 @@
  .container {
             display: grid;
-            width: 70vw;
+            width: 100vw;
             justify-content: center;
-            grid-template: 60px 200px/1fr 1fr 1fr 1fr;
+            grid-template: 70px 200px/1fr 1fr 1fr 1fr;
             grid-template-areas: "uno dos tres cuatro"
                 "contenido contenido contenido contenido";
-                row-gap: 10px;  
+                row-gap: 10px; 
+               
         }
 
 
@@ -31,20 +32,28 @@
             grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
             row-gap: 10px;
             text-align: center;
+            
         }
+        
         .contenidoDos {
                 grid-area: contenido;
                 display: grid;
                 grid-template-columns: 0.5fr 0.5fr;
                 text-align: center;
         }
-
-        .item {
-            
+        .contenidoTres {
+            grid-area: contenido;
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr;
             text-align: center;
-            background-color: white;
+    }
+        .item {
+            text-align: center;
+            background-color:white;
             padding: 10px 0px 10px;
+            align-items: center;
             color: black;
+       
 
         }
 
@@ -53,12 +62,28 @@
             padding: 5px 5px;
             color: black;
             border-radius: 10px;
-            border: none;
+            border-color:  white;
         }
-
+        .boton1 {
+           
+            padding: 5px 5px;
+            color: black;
+            border-radius: 10px;
+            border-color:  white;
+        }
         .boton:hover {
-            background-color: rgb(47, 64, 255);
+            border-color: grey;
             color: white;
+        }
+        .boton1:hover {
+            border-color: grey;
+        }
+        .cambiaBorde {
+            background-color: white;
+            padding: 5px 5px;
+            color: black;
+            border-radius: 10px;
+            border-color:  white;
         }
 
         a {
@@ -66,4 +91,14 @@
         }
         .clase1{
 position: relative;
+        }
+        .tarjeta {
+            display:grid;
+            grid-template-columns: repeat(2,auto);
+            float: left;
+            border: 1px solid grey;
+            margin:4px; padding: 2px;
+            width:450px;
+            height:150px;
+            overflow:auto;
         }
