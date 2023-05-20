@@ -1,0 +1,128 @@
+
+/* Header estilo y maquetado*/
+header{
+    display:grid;
+    grid-template-columns: 5% 50% auto;
+    grid-template-rows: 8em;
+    background-color: rgb(87, 212, 205);
+    height: 8em;
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
+/*Tamaño y ubicación del logo en el header*/
+  .logo-header {
+    height: 90%;
+    padding: .5em;
+    margin-left: 1em;
+    margin-right: 2em;
+  }
+  
+  /*Animación en el logo del header cuando hacemos hover*/
+  .logo-header:hover {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+/* Separación del contenedor de la burger del contenedor central*/
+  .burger {
+    margin-top: 3em;
+    margin-left: 1.5em;
+  }
+  /*Tamaño de la imágen del menú*/
+  #menu-burger {
+    height: 50%;
+  }
+  /*Estilo del contenedor del navegador y maquetado*/ 
+  .menu {
+    display: flex;
+    justify-content: right;
+    gap: 1em;
+    padding: 1em;
+    margin: 2em;
+    margin-right: 1em;
+    padding-right: 0.5em;
+   
+  }
+  /* Estilo de links del menú*/
+  .menu a {
+    color: #0a0a0a;
+    text-decoration: none;  /* Evita el subrayado */
+    font-size: 1em;
+    
+      
+  }
+/*Transición cuando pasamos el mousse por los links del menú*/
+  .menu a:hover {
+    transition: .3s;
+    background-color: #D9D9D9;
+    font-size: 1.2em;
+    text-decoration: underline;
+  }
+  /* Footer estilo y maquetado*/
+
+  footer {
+    display:grid;
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 8em;
+    background-color: rgb(87, 212, 205);
+    height: 8em;
+    width: 100%;
+    bottom: 0;
+    
+  }
+  /*Logo footer ubicación del contenedor*/
+  .contenedor-logo-footer{
+    display: flex;
+    justify-content: right;
+  }
+  /*Logo footer ubicación dentro del contenedor*/
+  #logo-footer {
+    height: 90%;
+    padding: .5em;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+/*Logos redes sociales ubicación dentro del contenedor*/
+  .logos-social-media {
+    height: 40%;
+    padding: 0.5em;
+  }
+ /*Logos redes sociales ubicación del contenedor*/
+  .contenedor-logos {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+  }
+  /*Pie de página: letra, y ubicación  del contenedor*/
+  #pie-de-pagina {
+    
+    display: flex;
+    margin-top: 4em;
+    padding-inline: 32%;
+    
+  }
+   
+  
+  /* Alineacion para responsivness */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
