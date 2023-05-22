@@ -1,6 +1,8 @@
  .container {
             display: grid;
-            width: 100vw;
+            width: 80vw;
+            padding-left:9vw;
+            padding-right: 10vw;
             justify-content: center;
             grid-template: 70px 200px/1fr 1fr 1fr 1fr;
             grid-template-areas: "uno dos tres cuatro"
@@ -102,3 +104,59 @@ position: relative;
             height:150px;
             overflow:auto;
         }
+        @media all and (max-width: 600px){
+           
+            .container {
+               display: flex;
+               flex-direction: column;
+                          
+            }
+            .contenidoUno {
+                display: flex;
+                flex-direction: column;
+   
+             }
+            
+            .contenidoDos {
+                display: flex;
+                flex-direction: column;
+   
+             }
+             .contenidoTres {
+                display: flex;
+                flex-direction: column;
+   
+             }
+             .tarjeta {
+                
+                width:350px;
+                height:120px;
+                
+            }
+        }
+        
+        @media all and (min-width: 600px) and (max-width: 800px){
+            .container {
+                display:grid;
+            grid-template-columns: repeat(2,auto);
+                           
+             }
+             .contenidoUno {
+                display:grid;
+            grid-template-columns: repeat(2,auto);
+    
+              }
+             
+             .contenidoDos {
+                display:grid;
+            grid-template-columns: repeat(2,auto);
+    
+              }
+              .contenidoTres {
+                display:grid;
+                grid-template-columns: repeat(1,auto);
+              }
+              
+             }
+        
+      
