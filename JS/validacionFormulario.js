@@ -4,7 +4,9 @@ function validar() {
     var apellido = document.getElementById("lastNameField").value.trim();
     var mail = document.getElementById("mail").value.trim();
     var contraseña = document.getElementById("pass").value.trim();
-   
+    var checkTerms = document.getElementById('terms');
+    var checkTutor = document.getElementById('tutor1');
+    var checkEstu = document.getElementById('student');
     
     if (nombre === "") {
         alert("Complete el campo Nombre")
@@ -25,6 +27,14 @@ function validar() {
         alert("Complete el campo contraseña")
         document.getElementById("box_contraseña").classList.add("campo_incorrecto");
         return false
+    }
+    else if (checkTerms.checked!=true) {
+        alert("Debe aceptar Términos y Condiciones")
+        return false
+    }
+    else if (checkTutor.checked!=true && checkEstu.checked!=true) {
+        alert("Debe seleccionar alguno o ambos campos: Soy tutor - Soy estudiante ")
+         return false
     }
     else if (!/^([a-zA-ZñÑáéíóúÁÉÍÓÚ])+$/i.test(nombre)) {
         document.getElementById("box_nombre").classList.add("campo_incorrecto");

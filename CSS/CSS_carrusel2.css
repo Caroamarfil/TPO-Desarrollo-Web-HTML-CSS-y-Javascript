@@ -2,7 +2,7 @@
  .container {
             display: grid;
             width: 80vw;
-            padding-left:9vw;
+            padding-left:10vw;
             padding-right: 10vw;
             justify-content: center;
             grid-template: auto(4);
@@ -73,21 +73,21 @@
         }
 
         .boton {
-            background-color: aquamarine;
-            padding: 5px 5px;
-            color: black;
+            font-size: 19px;
+            background-color: rgb(87, 212, 205);
+            padding: 8px 8px;
             border-radius: 10px;
-            border-color:  white;
+            border: none;
         }
         .boton1 {
-           
+            font-size: 19px;
             padding: 5px 5px;
             color: black;
             border-radius: 10px;
             border-color:  white;
         }
         .boton:hover {
-            border-color: grey;
+            background-color: grey;
             color: white;
         }
         .boton1:hover {
@@ -95,7 +95,7 @@
         }
         .cambiaBorde {
             background-color: white;
-            padding: 5px 5px;
+            padding: 8px 8px;
             color: black;
             border-radius: 10px;
             border-color:  white;
