@@ -1,19 +1,23 @@
+
  .container {
             display: grid;
             width: 80vw;
             padding-left:9vw;
             padding-right: 10vw;
             justify-content: center;
-            grid-template: 70px 200px/1fr 1fr 1fr 1fr;
+            grid-template: auto(4);
+            gap: 5em;
             grid-template-areas: "uno dos tres cuatro"
                 "contenido contenido contenido contenido";
-                row-gap: 10px; 
-               
+            row-gap: 1em; 
+            margin-top: 1em;
+            
         }
 
 
         .uno {
             grid-area: uno;
+            
         }
 
         .dos {
@@ -29,12 +33,21 @@
         }
 
         .contenidoUno {
-            grid-area: contenido;
             display: grid;
+            width: 80vw;
+            padding-left:9vw;
+            padding-right: 10vw;
+            justify-content: center;
+            grid-area: contenido;
             grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-            row-gap: 10px;
+            row-gap: 1em;
             text-align: center;
+            margin-bottom: 1em;
             
+        }
+        .pizarras{
+            width: 100%;
+            height: 100%;
         }
         
         .contenidoDos {
@@ -55,7 +68,7 @@
             padding: 10px 0px 10px;
             align-items: center;
             color: black;
-       
+            background-color: #D9D9D9;
 
         }
 
@@ -91,9 +104,7 @@
         a {
             text-decoration: none;
         }
-        .clase1{
-position: relative;
-        }
+       
         .tarjeta {
             display:grid;
             grid-template-columns: repeat(2,auto);
@@ -108,12 +119,18 @@ position: relative;
            
             .container {
                display: flex;
-               flex-direction: column;
+               width: 90vw;
+               gap: 0.5em;
+               padding: 1em;
+              
                           
             }
             .contenidoUno {
                 display: flex;
                 flex-direction: column;
+                width: 70vw;
+                margin-left: 8vw;
+                padding: 2em;
    
              }
             
@@ -127,23 +144,26 @@ position: relative;
                 flex-direction: column;
    
              }
-             .tarjeta {
-                
-                width:350px;
-                height:120px;
+           
                 
             }
-        }
+            .pizarras{
+                width: 95%;
+                height: 82%;
+                justify-content: center;
+            }
+        
         
         @media all and (min-width: 600px) and (max-width: 800px){
             .container {
                 display:grid;
-            grid-template-columns: repeat(2,auto);
+                grid-template-columns: repeat(2,auto);
                            
              }
              .contenidoUno {
                 display:grid;
-            grid-template-columns: repeat(2,auto);
+                grid-template-columns: repeat(2,auto);
+                
     
               }
              
@@ -156,6 +176,10 @@ position: relative;
                 display:grid;
                 grid-template-columns: repeat(1,auto);
               }
+              .pizarras{
+                width: 90%;
+                height: 72%;
+            }
               
              }
         

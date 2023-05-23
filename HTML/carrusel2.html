@@ -8,49 +8,107 @@
     <title>Pagina Principal</title>
     <link rel="shortcut icon" href="imagenes/logo-final.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/CSS_carrusel2.css">
+    <link rel="stylesheet" href="../CSS/resetEstilo.css">
+    <link rel="stylesheet" href="../CSS/headerYFooter.css">
+    <link rel="stylesheet" href="../CSS/menuDesplegable.css">
     <script src="../JS/JS_carrusel2.js"></script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="item uno"><button class="cambiaBorde" type="button" id="botonUno" onclick="cambiaContenido(1)">Descarga Documentos</button> </div>
+    <header>
+        <div class="burger">
+            <img src="../imagenes/barra-de-menus.png" alt="MENÚ" id="menu-burger" onclick="toggleMenu()">
+        </div>
+        <div id="menu_desplegable">
+            <ul>
+              <li><a href="../HTML/carrusel2.html">Página de Inicio</a></li>
+              <li><a href="../HTML/Enconstruccion.html">Documentos subidos</a></li>
+              <li><a href="../HTML/Enconstruccion.html">Documentos descargados</a></li>
+              <li><a href="../HTML/Enconstruccion.html">Mis tutores</a></li>
+              <li><a href="../HTML/Enconstruccion.html">Mis alumnos</a></li>
+              <li><a href="../HTML/Enconstruccion.html">Mis cursos</a></li>
+              <li><a href="../HTML/creditos.html">Créditos</a></li>
+          
+            </ul>
+          </div>
+          <script src="../JS/menuDesplegable.js"></script>
 
-        <div class="item dos"><button class="boton" type="button" id="botonDos" onclick="cambiaContenido(2)">Videos Tutoriales</button></div>
+        <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" class="logo-header">
 
-        <div class="item tres"><button class="boton" type="button" id="botonTres" onclick="cambiaContenido(4)" >Encuentra Tutor</button></div>
-
-        <div class="item cuatro"><button class="boton" type="button" id="botonCuatro"
-            onclick="cambiaContenido(5)">Subí Documentos</button></div>
-
+        <div class="menu">
+            <a href="../HTML/Enconstruccion.html">Iniciar Sesión</a>
+            <a href="../HTML/formRegistro.html">Registrarse</a>
+            <a href="../HTML/Enconstruccion.html">Contacto</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="item uno"><button class="cambiaBorde" type="button" id="botonUno" onclick="cambiaContenido(1)">Descarga
+                    Documentos</button> 
+            </div>
+        
+            <div class="item dos"><button class="boton" type="button" id="botonDos" onclick="cambiaContenido(2)">Videos
+                    Tutoriales</button>
+            </div>
+        
+            <div class="item tres"><button class="boton" type="button" id="botonTres" onclick="cambiaContenido(4)">Encuentra
+                    Tutor</button>
+            </div>
+        
+            <div class="item cuatro"><button class="boton" type="button" id="botonCuatro" onclick="cambiaContenido(5)">Subí
+                    Documentos</button>
+            </div>
+        </div>
         <div class="contenidoUno" id="mostrado">
-          
-          
-            <div class="clase1"><a href="Enconstruccion.html"><img src="../imagenes/física-e1534938838719.jpg" alt="pizarra con formulas de física" width="95%" height="82%" title="Física"><span>Física</span></a></div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/Matematicas.png" alt="pizarra con formulas matemática" width="95%"height="82%" title="Matemática"><span>Matemática</span></a></div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/Biología.jpg" alt="pizarra con formulas de física" width="95%" height="82%"                   title="Biología"><span>Biología</span></a> </div>
+            <div ><a href="Enconstruccion.html"><img src="../imagenes/física-e1534938838719.jpg"
+                        alt="pizarra con formulas de física" title="Física" class="pizarras"><span>Física</span></a>
+            </div>
+
+            <div><a href="Enconstruccion.html"><img src="../imagenes/Matematicas.png" alt="pizarra con  formulas matemática"
+                        title="Matemática" class="pizarras"><span>Matemática</span></a>
+            </div>
+
+            <div><a href="Enconstruccion.html"><img src="../imagenes/Biología.jpg" alt="pizarra con formulas de física"
+                        title="Biología" class="pizarras"><span>Biología</span></a> </div>
 
             <div> <a href="Enconstruccion.html"><img src="../imagenes/quimica.jpg"
-                        alt="ampolla con contenido y un esquema de estructura molecular de la sustancia" width="95%"
-                        height="82%" title="Química"><span>Química</span></a></div>
+                        alt="ampolla con contenido y un esquema de estructura molecular de la sustancia" title="Química"
+                        class="pizarras"><span>Química</span></a></div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/geografia.jpg" alt="Mapa y una brújula" width="95%"
-                    height="82%" title="Geografía"><span>Geografía</span></a></div>
+            <div><a href="Enconstruccion.html"><img src="../imagenes/geografia.jpg" alt="Mapa y una brújula" title="Geografía"
+                        class="pizarras"><span>Geografía</span></a></div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/historia1.jpg" alt="Libros antiguos y una lupa" width="95%" height="82%"
-                    title="Historia"><span>Historia</span></a> </div>
+            <div><a href="Enconstruccion.html"><img src="../imagenes/historia1.jpg" alt="Libros antiguos y una lupa"
+                        title="Historia" class="pizarras"><span>Historia</span></a> </div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/Filosofia.jpg" alt="Bustos de filosofos" width="95%" height="82%"
-                    title="Filosofía"><span>Filosofía</span></a></div>
+            <div><a href="Enconstruccion.html"><img src="../imagenes/Filosofia.jpg" alt="Bustos de filosofos" title="Filosofía"
+                        class="pizarras"><span>Filosofía</span></a></div>
 
-            <div><a href="Enconstruccion.html"><img src="../imagenes/otras_disiplinas.jpg" alt="esquemas de sistintas diciplinas tecnológicas" width="95%" height="82%"
-                    title="Otras Disiplinas"><span>Otras Disiplinas</span></a></div>
+            <div><a href="Enconstruccion.html"><img src="../imagenes/otras_disiplinas.jpg"
+                        alt="esquemas de sistintas diciplinas tecnológicas" title="Otras Disciplinas"
+                        class="pizarras"><span>Otras Disciplinas</span></a>
+            </div>
         </div>
-    </div>
+        
+        
+    </main>
 
-
-
+    <footer>
+        <div class="contenedor-logos">
+          <img src="../imagenes/signo-de-twitter.png" alt="Twitter" class="logos-social-media">
+          <img src="../imagenes/facebook.png" alt="Facebook" class="logos-social-media">
+          <img src="../imagenes/instagram.png" alt="Instagram" class="logos-social-media">
+        </div>
+        <div id="pie-de-pagina">
+          <p>Todos los derechos reservados</p>
+          
+        </div>
+        <div class="contenedor-logo-footer">
+          <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
+        </div>
+    
+      </footer>
 </body>
 
 </html>

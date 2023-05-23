@@ -48,6 +48,11 @@ input {
     border-radius: 1em;
     
 }
+.campo_incorrecto {
+    color: #f80404;
+}
+
+
 #parrafoTyC {
     justify-content: center;
 }

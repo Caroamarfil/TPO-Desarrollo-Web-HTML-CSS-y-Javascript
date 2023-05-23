@@ -12,7 +12,7 @@ header{
   }
 /*Tamaño y ubicación del logo en el header*/
   .logo-header {
-    height: 90%;
+    height: 80%;
     padding: .5em;
     margin-left: 1em;
     margin-right: 2em;
@@ -42,8 +42,9 @@ header{
   }
   /*Tamaño de la imágen del menú*/
   #menu-burger {
-    height: 50%;
+    height: 45%;
   }
+ 
   /*Estilo del contenedor del navegador y maquetado*/ 
   .menu {
     display: flex;
@@ -89,15 +90,17 @@ header{
   }
   /*Logo footer ubicación dentro del contenedor*/
   #logo-footer {
-    height: 90%;
+    height: 80%;
     padding: .5em;
     margin-left: 2em;
     margin-right: 2em;
+    align-self: center;
   }
 /*Logos redes sociales ubicación dentro del contenedor*/
   .logos-social-media {
-    height: 40%;
+    height: 30%;
     padding: 0.5em;
+    align-self: center;
   }
  /*Logos redes sociales ubicación del contenedor*/
   .contenedor-logos {
@@ -116,13 +119,172 @@ header{
    
   
   /* Alineacion para responsivness */
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
+  
+  @media all and (max-width: 600px){
+    header{
+      display:grid;
+      grid-template-columns: 10% 25% auto;
+      grid-template-rows: 6em;
+      background-color: rgb(87, 212, 205);
+      height: 6em;
+      width: 100%;
+      position: sticky;
+      top: 0;
+
     }
-    .header-right {
-      float: none;
+    .logo-header{
+    height: 65%;
+    padding: 0.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0.5em;
+    }
+    .burger {
+      margin-top: 3em;
+      margin-left: 1em;
+    }
+    /*Tamaño de la imágen del menú*/
+    #menu-burger {
+      height: 40%;
+    }
+    .menu {
+      display: flex;
+      align-self: center;
+      margin: .5em;
+      padding-left: 0.5em;
+      gap: 0.5em;
+    }
+    .menu a {
+      display: flex;
+      color: #0a0a0a;
+      text-decoration: none;  /* Evita el subrayado */
+      font-size: .8em;
+    }
+    .menu a:hover {
+      transition: .3s;
+      background-color: #D9D9D9;
+      font-size: 1em;
+      text-decoration: underline;
+    }
+    footer {
+      display:grid;
+      grid-template-columns: 20% auto 20%;
+      grid-template-rows: 6em;
+      background-color: rgb(87, 212, 205);
+      height: 6em;
+      width: 100%;
+      bottom: 0;
+      
+    }
+    
+    #logo-footer {
+      height: 65%;
+      padding: 1em;
+      padding-right: 0.5em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+    }
+    .logos-social-media {
+      height: 20%;
+      align-self: center;
+    }
+    .contenedor-logos {
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    #pie-de-pagina {
+    
+      display: flex;
+      justify-content: center;
+      font-size: .8em;
+      margin-top: 4em;
+      padding-inline: 10%;
+      
+    }
+  }
+  @media all and (min-width: 600px) and (max-width: 800px){
+    header{
+      display:grid;
+      grid-template-columns: 10% 30% auto;
+      grid-template-rows: 7em;
+      background-color: rgb(87, 212, 205);
+      height: 7em;
+      width: 100%;
+      position: sticky;
+      top: 0;
+
+    }
+    .logo-header{
+    height: 80%;
+    padding: 0.5em;
+    margin-left: .5em;
+    margin-right: 1em;
+    
+    }
+    .burger {
+      margin-top: 3em;
+      margin-left: 1em;
+    }
+    /*Tamaño de la imágen del menú*/
+    #menu-burger {
+      height: 60%;
+    }
+    .menu {
+      display: flex;
+      align-self: center;
+      margin: 1em;
+      padding-right: 1em;
+      margin-right: 2em;
+      gap: 1em;
+    }
+    .menu a {
+      display: flex;
+      color: #0a0a0a;
+      text-decoration: none;  /* Evita el subrayado */
+      font-size: 1em;
+    }
+    .menu a:hover {
+      transition: .3s;
+      background-color: #D9D9D9;
+      font-size: 1.2em;
+      text-decoration: underline;
+    }
+    footer {
+      display:grid;
+      grid-template-columns: 20% auto 20%;
+      grid-template-rows: 6em;
+      background-color: rgb(87, 212, 205);
+      height: 6em;
+      width: 100%;
+      bottom: 0;
+      
+    }
+    
+    #logo-footer {
+      height: 80%;
+      padding: 1em;
+      padding-right: 0.5em;
+      margin-right: 0.5em;
+      margin-left: 0.5em;
+    }
+    .logos-social-media {
+      height: 30%;
+      align-self: center;
+    }
+    .contenedor-logos {
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    #pie-de-pagina {
+    
+      display: flex;
+      justify-content: center;
+      font-size: 1em;
+      margin-top: 3em;
+      padding-inline: 10%;
+      
+      
     }
   }

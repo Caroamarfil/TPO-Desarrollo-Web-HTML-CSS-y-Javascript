@@ -10,13 +10,27 @@
   <link rel="shortcut icon" href="../imagenes/logo-final.ico" type="image/x-icon"> <!--Link a la imágen del logo-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong"> <!--Link para fuente de google-->
   <link rel="stylesheet" href="../CSS/resetEstilo.css">
+<link rel="stylesheet" href="../CSS/menuDesplegable.css">
 </head>
 
 <body>
   <header>
     <div class="burger">
-      <img src="../imagenes/barra-de-menus.png" alt="MENÚ" id="menu-burger">
-    </div>
+      <img src="../imagenes/barra-de-menus.png" alt="MENÚ" id="menu-burger" onclick="toggleMenu()">
+      </div>
+      <div id="menu_desplegable">
+        <ul>
+          <li><a href="../HTML/carrusel2.html">Página de Inicio</a></li>
+          <li><a href="../HTML/Enconstruccion.html">Documentos subidos</a></li>
+          <li><a href="../HTML/Enconstruccion.html">Documentos descargados</a></li>
+          <li><a href="../HTML/Enconstruccion.html">Mis tutores</a></li>
+          <li><a href="../HTML/Enconstruccion.html">Mis alumnos</a></li>
+          <li><a href="../HTML/Enconstruccion.html">Mis cursos</a></li>
+          <li><a href="../HTML/creditos.html">Créditos</a></li>
+      
+        </ul>
+      </div>
+      <script src="../JS/menuDesplegable.js"></script>
 
     <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" class="logo-header">
 
@@ -87,16 +101,13 @@
       <img src="../imagenes/signo-de-twitter.png" alt="Twitter" class="logos-social-media">
       <img src="../imagenes/facebook.png" alt="Facebook" class="logos-social-media">
       <img src="../imagenes/instagram.png" alt="Instagram" class="logos-social-media">
+      
     </div>
     <div id="pie-de-pagina">
       <p>Todos los derechos reservados</p>
     </div>
     <div class="contenedor-logo-footer">
       <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
-    </div>
-
-
-
     </div>
   </footer>
 </body>
