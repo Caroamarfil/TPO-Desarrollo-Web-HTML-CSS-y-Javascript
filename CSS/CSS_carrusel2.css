@@ -1,4 +1,29 @@
 
+
+/*Estilo y maqueta del contenedor del formulario*/
+.contenedor-formulario {
+    display: flex;
+    background-color: #ffff;
+    justify-content:center; 
+    align-content: center;
+    width: 25em;
+    height: 100%;
+    border-radius: 1em
+  }
+/*Estilo y maqueta de los renglones del formulario*/
+
+form {
+    display: grid;
+    grid-template-columns: 18em;
+    row-gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+
+ 
+ 
+ 
  .container {
             display: grid;
             width: 80vw;
@@ -61,7 +86,16 @@
             display: grid;
             grid-template-columns: 0.5fr 0.5fr;
             text-align: center;
+            width: 80vw;
+            padding-left:10vw;
+            padding-right: 10vw;
     }
+    .contenidoCuatro {
+         display: flex;
+         justify-content:center; 
+         align-content: center;
+        
+}
         .item {
             text-align: center;
             background-color:white;
