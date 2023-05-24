@@ -12,12 +12,15 @@ function traerDatosAPI() {
         .then(datos => datos.json()) //res va a guardar el dato mediante el método .json()
             .then(datos => {
             // Y luego copio ese texto en #contenido.
-            const actual=document.querySelector("#mostrado");
+            var actual=document.querySelector("#mostrado");
+            var botonTres=document.querySelector("#botonTres");
+            
+            if (botonTres.className==="cambiaBorde" && actual.className!="contenidoUno"){
             actual.innerHTML +=
                 `<div class="tarjeta">
                  <img src = "${datos.results[0].picture.large}"</img><br>
                  Nombre: ${datos.results[0].name.last}, ${datos.results[0].name.first}<br>
-                 Contacto:${datos.results[0].email}</div>`
+                 Contacto:${datos.results[0].email}</div>`}
         })
 }}
 function cambiaContenido(ene){
