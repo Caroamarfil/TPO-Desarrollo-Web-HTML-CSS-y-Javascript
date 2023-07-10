@@ -76,14 +76,15 @@ class Biblioteca:
        try:
            self.cursor.execute("INSERT INTO documentos (titulo,tematica,tipo,descripcion,descargas) VALUES (%s,%s,%s,%s,%s)",(titulo,tematica, tipo, descripcion,descargas))
            self.conexion.commit()
-           self.conexion.close()
-           print("El documento se agregó correctamente")
            
-           #return jsonify({'message':"El documento se agregó correctamente"}), 200 #No lo puedo hacer andar creo que hay que ejecutar flask "contexto de aplicación"
+           #print("El documento se agregó correctamente")
+           
+           return jsonify({'message':"El documento se agregó correctamente"}), 200 #No lo puedo hacer andar creo que hay que ejecutar flask "contexto de aplicación"
            
        except pymysql.IntegrityError:
-        #jsonify({'message':"Se generó un error en la carga del documento."}), 404
-        print("Se generó un error en la carga del documento.")
+        jsonify({'message':"Se generó un error en la carga del documento."}), 404
+        #print("Se generó un error en la carga del documento.")
+
 #PARA SELECCIONAR UN DOCUMENTO DE LA BASE DE DATOS.
    
    def consultar_documento(self, codigo):
@@ -92,10 +93,10 @@ class Biblioteca:
       if resultado:
          codigo,titulo,tematica,tipo,descripcion,descargas=resultado
          documento_consultado=Documento(codigo,titulo,tematica,tipo,descripcion,descargas)
-         return documento_consultado,    print(resultado)
+         return documento_consultado
       else:
          return False
-#PARA SUMAR DESCARGAS.!!!!!!!!!!!!!!1
+#PARA SUMAR DESCARGAS.!!!!!!!!!!!!!!
    def sumar_descargas(self,codigo):
       self.cursor.execute("SELECT * FROM documentos WHERE codigo = %s", (codigo,))#SELECCIONO EL DOCUMENTO QUE FUE DESCARGADO.      
       resultado=self.cursor.fetchone()
@@ -107,8 +108,8 @@ class Biblioteca:
          self.cursor.execute("UPDATE documentos SET descargas = %s  WHERE codigo = %s ", (descargas_actualizada,codigo,))#ACTUALIZO EL NRO DE DESCARGAS EN LA DB.
          self.conexion.commit()
         
-         #return jsonify({'message':"El documento se descargó correctamente"}), 200
-         print("El documento se descargó correctamente")
+         return jsonify({'message':"El documento se descargó correctamente"}), 200
+         #print("El documento se descargó correctamente")
       else:
          return False
 
@@ -125,18 +126,42 @@ class Biblioteca:
             document={'codigo':codigo,'titulo':titulo,'tematica':tematica,'tipo':tipo,'descripcion':descripcion,'descargas':descargas} # CONSTRUYO EL DICCIONARIO DOCUMENT
             documents.append(document) #CONTRUYO LA LISTA documents
          
-         #return jsonify(documents), 200
-         print(documents)
-         self.conexion.close()
+         return jsonify(documents), 200
+         #print(documents)
+         
       except pymysql.IntegrityError:
-         print('error')
-           # jsonify({'message': 'Documentos no encontrados.'}), 404 
-x=Biblioteca()
-
+         #print('error')
+         jsonify({'message': 'Documentos no encontrados.'}), 404 
+repositorio=Biblioteca()
+#
+#-------USADO PARA PROBAR Y CARGAR DOCUMENTOS A LA BD
+#x=Biblioteca()
 #x.agregar_documento("Electrólis","Química", "Monografía", "Descripción del proceso de electrólisis del agua")
 
-#app = Flask(__name__)
-#CORS(app)     
+    
 #x.sumar_descargas("2")
 #x.listar_documentos('Física')
-x.consultar_documento("5")
+#x.consultar_documento("5")
+#------------------------------------------------------------
+
+#VAMOS CON LA API
+
+app = Flask(__name__)
+CORS(app)
+
+#RUTA PARA LISTAR DOCUMENTOS DE LA tematica PEDIDA
+@app.route('/documentos/<tematica>', methods=['GET'])
+def documentos_a_mostra(tematica):
+    return repositorio.listar_documentos(tematica)
+
+#RUTA PARA AGREGAR DOCUMENTO (LINKEARLA CON EL FORMULARIO DE CARGAR DOCUMENTOS")
+@app.route('/documentos', methods=['POST'])
+def subir_documentos():
+    titulo = request.json.get('titulo')
+    tematica= request.json.get('tematica')
+    tipo = request.json.get('tipo')
+    descripcion = request.json.get('descripcion')
+    return repositorio.agregar_documento(titulo,tematica,tipo,descripcion)
+
+if __name__ == '__main__':
+    app.run()
