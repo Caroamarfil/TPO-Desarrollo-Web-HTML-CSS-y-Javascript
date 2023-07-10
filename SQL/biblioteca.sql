@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2023 a las 10:53:43
+-- Tiempo de generación: 10-07-2023 a las 11:56:03
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -48,7 +48,9 @@ INSERT INTO `documentos` (`codigo`, `titulo`, `tematica`, `tipo`, `descripcion`,
 (5, 'Electrólis', 'Química', 'Monografía', 'Descripción del proceso de electrólisis del agua', 1),
 (6, 'Egipto', 'Historia', 'Monografía', 'Historia del antiguo Egipto entre los periodos tal y tal', 0),
 (7, 'la célula', 'Biología', 'Ensayo', 'la celula', 0),
-(8, 'Fotosíntesis ', 'Biología', 'Monografía', 'Monografía sobre la fotosíntesis', 0);
+(8, 'Fotosíntesis ', 'Biología', 'Monografía', 'Monografía sobre la fotosíntesis', 0),
+(9, 'Integrales múltiples', 'Matemática', 'Ejercicios resueltos', 'Ejercicios de integración', 0),
+(10, 'Derivadas parciales', 'Matemática', 'Trabajo Práctico', 'resolución de ejercicios de derivadas de funciones de múltiples variables\n', 0);
 
 --
 -- Índices para tablas volcadas
@@ -68,7 +70,7 @@ ALTER TABLE `documentos`
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

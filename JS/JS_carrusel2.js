@@ -3,6 +3,54 @@ const segundo='<div class="clase1"><iframe width="65%" height="85%" src="https:/
 const tercero='<div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Tutores/as de Física</button> </div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Tutores/as de Matemática</button></div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)" >Tutores/as de Biología</button></div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Tutores/as de Química</button></div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Tutores/as de Geografía</button> </div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Tutores/as de Historia </button></div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)" >Tutores/as de Filosofía</button></div><div class="clase1"><button class="boton1" type="button" onclick="cambiaContenido(3)">Otras Disiplinas</button></div>'
 const cuarto='<div class="formu"><div class="contenedor-formulario"> <form id="formulario2">  <label for="titul">Título del documento:</label>    <input size="30" type="text" name="titulo"id="titul" ><label for= "tema">Temática del documento:</label> <select name="tematica" id="tema"> <option>Biología</option> <option>Filosofía</option> <option>Física</option> <option>Geografía</option> <option>Historia</option> <option>Química</option> <option>Matemática</option> <option>Otra</option> </select> <label for="tip">Tipo de documento:</label> <select name="tipo" id="tip">  <option>Ensayo</option> <option>Monografía</option> <option>Trabajo Práctico</option> <option>Ejercicios resueltos</option> <option>Informe</option> <option>Otro</option> </select> <label for="Archivo">Archivo:</label> <input style= "background-color:white; border-radius: 0px;" type="file" name="Archivo" id="Archivo">    <label for="descrip">Descripción del contenido:</label>   <textarea name="descrip" id="descrip" cols="40" rows="3"></textarea></fieldset> <input class="botones" type="reset" value="Borrar formulario"> <input  class="botones" type="submit" value="Subir Documento"> </form> </div> </div>'
 
+const URL = "http://127.0.0.1:5000/" // Esta es la dirección del es el servidor de flask
+
+
+document.getElementById('formulario2').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    var titulo = document.getElementById('titul').value;
+    var tematica = document.getElementById('tema').value;
+    var tipo= document.getElementById('tip').value;
+    var descripcion = document.getElementById('descrip').value;
+
+    
+    var documento = {
+        titulo: titulo,
+        tematica: tematica,
+        tipo:tipo,
+        descripcion: descripcion
+    };
+    console.log(documento)
+    
+    fetch(URL + 'documentos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(documento)
+    })
+        .then(function (response) {
+            // Código para manejar la respuesta
+            if (response.ok) {
+                return response.json(); // Parseamos la respuesta JSON
+            } else {
+                throw new Error('Error al agregar el documento');
+            }
+        })
+        .then(function (data) {
+            alert('Docuemnto agregado correctamente.');
+            document.getElementById('titul').value = "";
+            document.getElementById('tema').value = "";
+            document.getElementById('tip').value = "";
+            document.getElementById('descrip').value = "";
+        })
+        .catch(function (error) {
+           
+            alert('Error al agregar el documento.');
+        });
+}) 
+
+
 function traerDatosAPI() {
     
     for (var i=1;i<=9;i++){

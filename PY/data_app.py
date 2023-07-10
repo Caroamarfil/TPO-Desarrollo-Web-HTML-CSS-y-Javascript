@@ -132,6 +132,14 @@ class Biblioteca:
       except pymysql.IntegrityError:
          #print('error')
          jsonify({'message': 'Documentos no encontrados.'}), 404 
+
+   def eliminar_documento(self, codigo):
+        self.cursor.execute("DELETE FROM documentos WHERE codigo = %s", (codigo))
+        self.conexion.commit()
+        if self.cursor.rowcount > 0:
+            return jsonify({'message': 'Documento eliminado correctamente.'}), 200
+        return jsonify({'message': 'Documento no encontrado.'}), 404
+
 repositorio=Biblioteca()
 #
 #-------USADO PARA PROBAR Y CARGAR DOCUMENTOS A LA BD
@@ -162,6 +170,14 @@ def subir_documentos():
     tipo = request.json.get('tipo')
     descripcion = request.json.get('descripcion')
     return repositorio.agregar_documento(titulo,tematica,tipo,descripcion)
+#RUTA PARA AGREGAR DESCARGAS DE UN DOCUMENTO (LINKEARLA CON UN BOTON "DESCARGAS" QUE SE MUESTRE AL COSTADO DE LA TABLA DE DOCUEMNTOS ENCONTRADOS, EL BOTON DEBE CAPTURAR EL CODIGO DEL DOCUEMENTO)
+@app.route('/documentos/<codigo>', methods=['PUT'])
+def sumar_descargas(codigo):
+        return repositorio.sumar_descargas(codigo)
+#RUTA PARA ELIMINAR UN DOCUMENTO POR CODIGO (NO SE SI LA USAREMOS, DEBER'IOMOS POR CONSIGNA)
+@app.route('/documentos/<codigo>', methods=['DELETE'])
+def borrar_documento(codigo):
+        return repositorio.eliminar_documento(codigo)
 
 if __name__ == '__main__':
     app.run()
