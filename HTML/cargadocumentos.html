@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="../CSS/resetEstilo.css">
     <!--Link al reset para que el footer quede siempre abajo y el body ocupe todo el lugar disponible-->
 </head>
+
 <body>
     <header>
         <div class="burger">
@@ -26,58 +28,67 @@
         </div>
     </header>
     <main>
-<div class="formu"><div class="contenedor-formulario"> 
-       <form id="formulario2">    
-       <label for="titul">Título del documento:</label>    
-       <input size="30" type="text" name="titulo"id="titul" >
-       <label for= "tema">Temática del documento:</label>
-       <select name="tematica" id="tema">
-       <option>Biología</option>
-       <option>Filosofía</option>
-       <option>Física</option>
-       <option>Geografía</option>
-       <option>Historia</option>
-       <option>Química</option>
-       <option>Matemática</option> 
-       <option>Otra</option> </select>
-       
-       <label for="tip">Tipo de documento:</label>
-       <select name="tipo" id="tip">  <option>Ensayo</option>
-       <option>Monografía</option>
-       <option>Trabajo Práctico</option>
-       <option>Ejercicios resueltos</option>
-       <option>Informe</option>
-       <option>Otro</option>
-       </select>
-       <label for="Archivo">Archivo:</label>
-       <input style= "background-color:white; border-radius: 0px;" type="file" name="Archivo" id="Archivo">   
-       <label for="descrip">Descripción del contenido:</label>  
-    <textarea name="descrip" id="descrip" cols="40" rows="3"></textarea></fieldset>
-       <input class="botones" type="reset" value="Borrar formulario">
-       <input  class="botones" type="submit" value="Subir Documento">
-    </form>
-    </div>
-</div>
-</main> 
-<footer>
+        <div class="formu">
+            <div class="contenedor-formulario">
+                <form id="formulario2">
+                    <label for="titul">Título del documento:</label>
+                    <input size="30" type="text" name="titulo" id="titul">
+                    <label for="tema">Temática del documento:</label>
+                    <select name="tematica" id="tema">
+                        <option>Biología</option>
+                        <option>Filosofía</option>
+                        <option>Física</option>
+                        <option>Geografía</option>
+                        <option>Historia</option>
+                        <option>Química</option>
+                        <option>Matemática</option>
+                        <option>Otra</option>
+                    </select>
 
-    <div class="contenedor-logos">
-        <a href="https://twitter.com" target=_blank><img src="../imagenes/signo-de-twitter.png" alt="Twitter" class="logos-social-media"></a> 
-         <a href="https://es-la.facebook.com/" target=_blank><img src="../imagenes/facebook.png" alt="Facebook" class="logos-social-media"></a>
-          <a href="https://www.instagram.com/" target=_blank><img src="../imagenes/instagram.png" alt="Instagram" class="logos-social-media"></a>
-      </div>
-      <div id="pie-de-pagina">
-        <p><center> Todos los derechos reservados</center></p>
-        
-      </div>
-    <div class="contenedor-logo-footer">
-        <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
-    </div>
+                    <label for="tip">Tipo de documento:</label>
+                    <select name="tipo" id="tip">
+                        <option>Ensayo</option>
+                        <option>Monografía</option>
+                        <option>Trabajo Práctico</option>
+                        <option>Ejercicios resueltos</option>
+                        <option>Informe</option>
+                        <option>Otro</option>
+                    </select>
+                    <label for="Archivo">Archivo:</label>
+                    <input style="background-color:white; border-radius: 0px;" type="file" name="Archivo" id="Archivo">
+                    <label for="descrip">Descripción del contenido:</label>
+                    <textarea name="descrip" id="descrip" cols="40" rows="3"></textarea></fieldset>
+                    <input class="botones" type="reset" value="Borrar formulario">
+                    <input class="botones" type="submit" value="Subir Documento">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
 
-</footer>      
-<script src="../JS/cargaDocumentos.js"></script>
-    
+        <div class="contenedor-logos">
+            <a href="https://twitter.com" target=_blank><img src="../imagenes/signo-de-twitter.png" alt="Twitter"
+                    class="logos-social-media"></a>
+            <a href="https://es-la.facebook.com/" target=_blank><img src="../imagenes/facebook.png" alt="Facebook"
+                    class="logos-social-media"></a>
+            <a href="https://www.instagram.com/" target=_blank><img src="../imagenes/instagram.png" alt="Instagram"
+                    class="logos-social-media"></a>
+        </div>
+        <div id="pie-de-pagina">
+            <p>
+                <center> Todos los derechos reservados</center>
+            </p>
+
+        </div>
+        <div class="contenedor-logo-footer">
+            <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
+        </div>
+
+    </footer>
+    <script src="../JS/cargaDocumentos.js"></script>
 
 
-    </body>
-    </html>
+
+</body>
+
+</html>
