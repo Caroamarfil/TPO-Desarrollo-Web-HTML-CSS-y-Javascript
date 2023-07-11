@@ -1,0 +1,47 @@
+/* Estilo de la tabla */
+.table-responsive {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilo del encabezado de la tabla */
+  .encabezado {
+    background-color: rgb(87, 212, 205);
+    
+    text-align: center;
+  }
+  
+  #listaDocumentos th {
+    padding: 0.5em;
+    text-align:center;
+  }
+  
+  /* Estilo de las celdas de la tabla */
+  #listaDocumentos td {
+    border: 0.1em solid #000000;
+    padding: 0.5em;
+    text-align:center;
+  }
+  
+  /* Estilo para resaltar las filas de la tabla en hover */
+  #listaDocumentos tbody tr:hover {
+    background-color: #F0F0F0;
+  }
+  
+/* Ubicación botón Volver*/
+#boton_volver {
+    position: absolute;
+    bottom: 8em; 
+    left: 5%;
+    transform: translateX(-50%);
+    
+  }
+  h1{
+    margin-top: 1em;
+    text-align:center;
+    text-decoration: underline;
+  }
+  
