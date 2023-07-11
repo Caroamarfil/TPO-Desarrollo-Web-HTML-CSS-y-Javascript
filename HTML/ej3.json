@@ -1,0 +1,18 @@
+[
+    {
+        "codigo": 9,
+        "descargas": 0,
+        "descripcion": "Ejercicios de integraci\u00f3n",
+        "tematica": "Matem\u00e1tica",
+        "tipo": "Ejercicios resueltos",
+        "titulo": "Integrales m\u00faltiples"
+    },
+    {
+        "codigo": 10,
+        "descargas": 0,
+        "descripcion": "resoluci\u00f3n de ejercicios de derivadas de funciones de m\u00faltiples variables\n",
+        "tematica": "Matem\u00e1tica",
+        "tipo": "Trabajo Pr\u00e1ctico",
+        "titulo": "Derivadas parciales"
+    }
+]
