@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor-formulario">
+        <form id="formulario3">
+            <label for="tematica">Temática del documento:</label>
+            <select name="tematica" id="tematica">
+                <option>Biología</option>
+                <option>Filosofía</option>
+                <option>Física</option>
+                <option>Geografía</option>
+                <option>Historia</option>
+                <option>Química</option>
+                <option>Matemática</option>
+                <option>Otra</option>
+            </select>
+            <input class="botones" type="reset" value="Borrar formulario">
+            <input class="botones" type="submit" value="busca Documentos">
+        </form>
+
+        <button class="boton" type="button" id=dodigo onclick= "sumaDescargas(11)">Descargar</button></td>
+    <h1>Listado de documentos</h1>
+        <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Temática</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+                <th>Descragas</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaDocumentos">
+        </tbody>
+    </table>
+<script src="../JS/cambiarDescargas.js"></script>
+
+</body>
+</html>

@@ -141,6 +141,7 @@ class Biblioteca:
         return jsonify({'message': 'Documento no encontrado.'}), 404
 
 repositorio=Biblioteca()
+#repositorio.sumar_descargas(3)
 #
 #-------USADO PARA PROBAR Y CARGAR DOCUMENTOS A LA BD
 #x=Biblioteca()
@@ -171,8 +172,9 @@ def subir_documentos():
     descripcion = request.json.get('descripcion')
     return repositorio.agregar_documento(titulo,tematica,tipo,descripcion)
 #RUTA PARA AGREGAR DESCARGAS DE UN DOCUMENTO (LINKEARLA CON UN BOTON "DESCARGAS" QUE SE MUESTRE AL COSTADO DE LA TABLA DE DOCUEMNTOS ENCONTRADOS, EL BOTON DEBE CAPTURAR EL CODIGO DEL DOCUEMENTO)
-@app.route('/documentos/<codigo>', methods=['PUT'])
+@app.route('/descargas/<codigo>', methods=['POST'])
 def sumar_descargas(codigo):
+        codigo=request.json.get('codigo')
         return repositorio.sumar_descargas(codigo)
 #RUTA PARA ELIMINAR UN DOCUMENTO POR CODIGO (NO SE SI LA USAREMOS, DEBER'IOMOS POR CONSIGNA)
 @app.route('/documentos/<codigo>', methods=['DELETE'])
