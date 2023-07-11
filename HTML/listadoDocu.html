@@ -2,101 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"">
-    <title>Pagina Principal</title>
-    <link rel="shortcut icon" href="../imagenes/logo-final.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/CSS_carrusel2.css">
-    <link rel="stylesheet" href="../CSS/resetEstilo.css">
-    <link rel="stylesheet" href="../CSS/headerYFooter.css">
-    <link rel="stylesheet" href="../CSS/menuDesplegable.css">
-    <script src="../JS/JS_carrusel2.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"">
+    <title>Listado de documentos</title>
+    <link rel=" shortcut icon" href="../imagenes/logo-final.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../CSS/CSS_carrusel2.css">
+  <link rel="stylesheet" href="../CSS/resetEstilo.css">
+  <link rel="stylesheet" href="../CSS/headerYFooter.css">
+  <link rel="stylesheet" href="../CSS/menuDesplegable.css">
+  <link rel="stylesheet" href="../CSS/listadoDocumentos.css">
+  <script src="../JS/JS_carrusel2.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="burger">
-            <img src="../imagenes/barra-de-menus.png" alt="MENÚ" id="menu-burger" onclick="toggleMenu()">
-        </div>
-        <div id="menu_desplegable">
-            <ul>
-              <li><a href="../index.html">Página de Inicio</a></li>
-              <li><a href="../HTML/Enconstruccion.html">Documentos subidos</a></li>
-              <li><a href="../HTML/Enconstruccion.html">Documentos descargados</a></li>
-              <li><a href="../HTML/Enconstruccion.html">Mis tutores</a></li>
-              <li><a href="../HTML/Enconstruccion.html">Mis alumnos</a></li>
-              <li><a href="../HTML/Enconstruccion.html">Mis cursos</a></li>
-              <li><a href="../HTML/creditos.html">Créditos</a></li>
-          
-            </ul>
-          </div>
-          <script src="../JS/menuDesplegable.js"></script>
+  <header>
+    <div class="burger">
+      <img src="../imagenes/barra-de-menus.png" alt="MENÚ" id="menu-burger" onclick="toggleMenu()">
+    </div>
+    <div id="menu_desplegable">
+      <ul>
+        <li><a href="../index.html">Página de Inicio</a></li>
+        <li><a href="../HTML/Enconstruccion.html">Documentos subidos</a></li>
+        <li><a href="../HTML/Enconstruccion.html">Documentos descargados</a></li>
+        <li><a href="../HTML/Enconstruccion.html">Mis tutores</a></li>
+        <li><a href="../HTML/Enconstruccion.html">Mis alumnos</a></li>
+        <li><a href="../HTML/Enconstruccion.html">Mis cursos</a></li>
+        <li><a href="../HTML/creditos.html">Créditos</a></li>
 
-        <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" class="logo-header">
+      </ul>
+    </div>
+    <script src="../JS/menuDesplegable.js"></script>
 
-        <div class="menu1">
-            <a href="../HTML/Enconstruccion.html">Iniciar Sesión</a>
-            <a href="../HTML/formRegistro.html">Registrarse</a>
-            <a href="../HTML/Enconstruccion.html">Contacto</a>
+    <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" class="logo-header">
+
+    <div class="menu1">
+      <a href="../HTML/Enconstruccion.html">Iniciar Sesión</a>
+      <a href="../HTML/formRegistro.html">Registrarse</a>
+      <a href="../HTML/Enconstruccion.html">Contacto</a>
+    </div>
+  </header>
+  <main>
+    <div class="formu">
+      <div class="contenedor-formulario">
+        <form id="formulario3">
+            <label for="tematica">Temática del documento:</label>
+            <select name="tematica" id="tematica">
+                <option>Biología</option>
+                <option>Filosofía</option>
+                <option>Física</option>
+                <option>Geografía</option>
+                <option>Historia</option>
+                <option>Química</option>
+                <option>Matemática</option>
+                <option>Otra</option>
+            </select>
+           <input class="botones" type="submit" value="Buscar Documentos">
+        </form>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <div class="item uno"><button class="cambiaBorde" type="button" id="botonUno" onclick="cambiaContenido(1)">Descarga
-                    Documentos</button> 
-            </div>
-        
-            <div class="item dos"><button class="boton" type="button" id="botonDos" onclick="cambiaContenido(2)">Videos
-                    Tutoriales</button>
-            </div>
-        
-            <div class="item tres"><button class="boton" type="button" id="botonTres" onclick="cambiaContenido(4)">Encuentra
-                    Tutor</button>
-            </div>
-        
-            <div class="item cuatro"><button class="boton" type="button" id="botonCuatro" onclick="cambiaContenido(5)">Subí
-                    Documentos</button>
-            </div>
         </div>
-        <div class="contenidoUno" id="mostrado">     
-        <h1>Listado de Documentos</h1>
-    </main>
-    <body onload="addTablaDocu()">
-      <div class="table-responsive">
+    <h1>Listado de Documentos</h1>
+    
+      <div class="table-responsive"  onload="addTablaDocu()">
         <table id="listaDocumentos">
           <thead class="encabezado">
-            <th>Id</th>
-            <th>Titulo</th>
+            <th>Código</th>
+            <th>Descargas</th>
+            <th>Descripción</th>
             <th>Temática</th>
-            <th>Tipo de documento</th>
-            <th>Autor</th>
-            <th>Fecha de publicación</th>
+            <th>Tipo</th>
+            <th>Título</th>
+            <th>Acción</th>
           </thead>
           <tbody id="bodyDocumentos"></tbody>
         </table>
       </div>
-      <a href = "index.html"  class="boton" id="boton">
-        <button type="button" class="btn btn-primary btn-sm">Volver </button>
-      </a>
-  
-      <script src="../JS/tablaDocumentos.js"></script>
-    </body>
-    <footer>
-        <div class="contenedor-logos">
-          <h3>  Seguinos en nuestras redes:</h3>
-          <a href="https://twitter.com" target=_blank><img src="../imagenes/signo-de-twitter.png" alt="Twitter" class="logos-social-media"></a> 
-           <a href="https://es-la.facebook.com/" target=_blank><img src="../imagenes/facebook.png" alt="Facebook" class="logos-social-media"></a>
-            <a href="https://www.instagram.com/" target=_blank><img src="../imagenes/instagram.png" alt="Instagram" class="logos-social-media"></a>
-        </div>
-        <div id="pie-de-pagina">
-          <p><center> Todos los derechos reservados</center></p>
-          
-        </div>
-        <div class="contenedor-logo-footer">
-          <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
-        </div>
-    
-      </footer>
+     
+     
+        <a href="../index.html" class="boton" id="boton_volver">
+          <button type="button" class="btn btn-primary btn-sm">Volver </button>
+        </a>
+      
+  </main>
+  <script src="../JS/pruebaDescargar.js"></script>
+
+  <footer>
+
+    <div class="contenedor-logos">
+      <h5> Seguinos en nuestras redes:</h5>
+      <a href="https://twitter.com" target=_blank><img src="../imagenes/signo-de-twitter.png" alt="Twitter"
+          class="logos-social-media"></a>
+      <a href="https://es-la.facebook.com/" target=_blank><img src="../imagenes/facebook.png" alt="Facebook"
+          class="logos-social-media"></a>
+      <a href="https://www.instagram.com/" target=_blank><img src="../imagenes/instagram.png" alt="Instagram"
+          class="logos-social-media"></a>
+    </div>
+    <div id="pie-de-pagina">
+      <p>
+        <center> Todos los derechos reservados</center>
+      </p>
+
+    </div>
+    <div class="contenedor-logo-footer">
+      <img src="../imagenes/logo-final.ico" alt="EDUSYNC-LOGO" id="logo-footer">
+    </div>
+
+  </footer>
 </body>
 
 </html>
