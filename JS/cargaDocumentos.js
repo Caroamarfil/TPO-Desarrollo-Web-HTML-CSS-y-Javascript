@@ -1,5 +1,5 @@
 
-const URL = "http://127.0.0.1:5000/" // Esta es la dirección del es el servidor de flask
+const URL = "https://joral325.pythonanywhere.com/" // Esta es la dirección del es el servidor de flask
 //const URL = "https://xxxxxxxx.pythonanywhere.com/"
 
 // Capturamos el evento de envío del formulario

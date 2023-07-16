@@ -9,7 +9,7 @@ main {
     justify-content: center;
     align-content: center;
     padding: 2em;
-   
+    
 }
 /*Estilo y maqueta del contenedor del formulario*/
 .contenedor-formulario {
@@ -19,7 +19,8 @@ main {
     align-content: center;
     width: 25em;
     height: 100%;
-    border-radius: 1em
+    border-radius: 1em;
+    
   }
 /*Estilo y maqueta de los renglones del formulario*/
 
@@ -29,12 +30,12 @@ form {
     row-gap: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
-    
+       
 }
-form >div {
+/* form >div {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .botones {
     font-size: 1em;

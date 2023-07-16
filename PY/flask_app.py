@@ -56,11 +56,11 @@ def cuenta_descargas(self):
 class Biblioteca:
    def __init__(self):
       self.conexion=pymysql.connect(
-         host='localhost',
-         port=3306,
-         user='root',
-         password="",
-         database='biblioteca'
+         host='joral325.mysql.pythonanywhere-services.com',
+         #port=3306,
+         user='joral325',
+         password="Dulcinea325",
+         database='joral325$biblioteca'
       )
       self.cursor=self.conexion.cursor()
       self.crear_tabla_documentos()
@@ -180,6 +180,8 @@ def sumar_descargas(codigo):
 @app.route('/documentos/<codigo>', methods=['DELETE'])
 def borrar_documento(codigo):
         return repositorio.eliminar_documento(codigo)
-
+@app.route('/')
+def index():
+    return 'API del GRUPO 8 Comisión 23007 Codo a Coco'
 if __name__ == '__main__':
     app.run()
