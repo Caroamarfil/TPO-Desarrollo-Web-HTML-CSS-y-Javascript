@@ -1,6 +1,6 @@
 
 
-const apiUrl = "http://127.0.0.1:5000"; // Se cambia luego por la de PythonAnywhere
+const apiUrl = "https://joral325.pythonanywhere.com/"; // Se cambia luego por la de PythonAnywhere
 document.getElementById('formulario3').addEventListener('submit', function (event) {
     event.preventDefault(); // Evitamos que se envie el form por ahora
 
